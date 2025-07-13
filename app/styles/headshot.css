@@ -1,5 +1,18 @@
+.old-photo {
+  filter: 
+    contrast(1.2) 
+    brightness(1.1) 
+    sepia(0.2) 
+    saturate(1.5) 
+    grayscale(0.1)
+    url('../../public/grain.svg#grain');
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
 .rimRotate {
-  border-radius: 60%;
+  border-radius: 10%;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -34,7 +47,7 @@
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(102, 102, 102, 0.75) 50%,
+    var(--color-burnt-orange) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   height: 300px;

@@ -8,23 +8,25 @@ export default function Hero() {
     <SectionBlock>
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <div className="mx-auto flex items-center justify-center">
-          <div className="rimRotate">
-            <div className="inner">
+          <div id="photo" className="rimRotate -rotate-10">
+            <div className="inner bg-amber-50 pt-2 px-2 rounded-2xl shadow-lg">
               <Image
+                className="old-photo"
                 src={mainHeadshot}
                 alt={"Me at the Terracotta Warriors in Xi'An, China"}
                 width={400}
                 height={400}
-                priority
-                style={{ borderRadius: "50%" }}
               />
+              <h4 className="text-gray-900 text-center text-sm m-5 font-serif">
+                Computer Man
+              </h4>
             </div>
           </div>
           <div>
             <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
               Nigel Mckenzie-Ryan
             </h1>
-            <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+            <p className="mb-8 xs:text-md md:text-lg font-normal lg:text-xl sm:px-16 xl:px-48">
               Hi! I&apos;m a software engineer with three years of experience. I
               specialize in building web applications using React, Next.js,
               DotNet and TypeScript
