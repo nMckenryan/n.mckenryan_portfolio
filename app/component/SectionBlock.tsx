@@ -1,5 +1,7 @@
 import React from "react";
 import type { ReactNode } from "react";
+import Polaroid from "./Polaroid";
+import yes from "@/public/headshots/xian.webp";
 
 export default function SectionBlock({
   children,
