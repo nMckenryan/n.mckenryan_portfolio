@@ -11,7 +11,7 @@ export default function SectionBlock({
   return (
     <section
       className={
-        `py-4 px-4 max-w-screen-xl mx-auto bg-white dark:bg-avocado-green my-5 rounded-2xl shadow-lg shadow-red-600` +
+        `py-4 px-4 max-w-screen-xl mx-auto bg-avocado-green dark:bg-avocado-green my-5 rounded-2xl shadow-lg shadow-red-600` +
         className
       }
     >

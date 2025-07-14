@@ -1,13 +1,16 @@
 .old-photo {
   filter: 
-    contrast(1.2) 
-    brightness(1.1) 
-    sepia(0.2) 
-    saturate(1.5) 
-    grayscale(0.1)
+    contrast(1.1)
+    brightness(1.05)
+    sepia(0.3) 
+    saturate(1.3)
+    grayscale(0.2)
+    hue-rotate(-5deg)
     url('../../public/grain.svg#grain');
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+  mix-blend-mode: multiply;
 }
 
 

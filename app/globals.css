@@ -58,7 +58,7 @@
   --color-groovy-turquoise: '#1ABC9C';
 }
 
-p, h1, h2, h3, h5, h6, ul, ol, li {
+p, h1, h2, h3, h4, h5, h6, ul, ol, li {
   color: white;
 }
 
