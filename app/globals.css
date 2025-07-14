@@ -1,9 +1,45 @@
 @import "tailwindcss";
 
+
+@font-face {
+  font-family: 'Tropical Organic';
+  src: url('/fonts/TropicalOrganicDemoRegular-vnG8M.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Retro Stacked';
+  src: url('/fonts/RetroStacked-j9qBM.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dallia Bold';
+  src: url('/fonts/DalliaBold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Beauty Mountains';
+  src: url('/fonts/BeautyMountains.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 :root {
   --background: #964B00;
   --foreground: #FF9900;
 }
+
 
 @theme inline {
   --color-background: var(--background);

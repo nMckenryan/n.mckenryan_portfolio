@@ -7,7 +7,12 @@ export default function Home() {
     <div>
       <Hero />
       <SectionBlock>
-        <h2 className="text-2xl font-bold text-left mb-8 px-4">Projects</h2>
+        <h2
+          className="text-4xl text-left mb-8 px-4"
+          style={{ fontFamily: "'Tropical Organic', sans-serif" }}
+        >
+          Projects
+        </h2>
         <div className="mx-auto px-8">
           <ul>
             <li> Bullet</li>
@@ -17,7 +22,12 @@ export default function Home() {
       </SectionBlock>
 
       <SectionBlock>
-        <h2 className="text-2xl font-bold text-left mb-8 px-4">Experience</h2>
+        <h2
+          className="text-4xl text-left mb-8 px-4"
+          style={{ fontFamily: "'Tropical Organic', sans-serif" }}
+        >
+          Experience
+        </h2>
         <SummaryBlock
           title="Bullet"
           startDate={new Date("2025-01-01")}

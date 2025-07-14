@@ -17,10 +17,13 @@ export default function Polaroid({
           className="old-photo"
           src={imageUrl}
           alt={title}
-          width={400}
-          height={400}
+          width={300}
+          height={300}
         />
-        <h4 className="text-gray-900 text-center text-sm m-5 font-serif">
+        <h4
+          className="text-gray-900 text-center text-md m-5 font-serif"
+          style={{ fontFamily: "'Dallia Bold', sans-serif" }}
+        >
           {title}
         </h4>
       </div>

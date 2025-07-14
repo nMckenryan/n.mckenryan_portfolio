@@ -1,7 +1,5 @@
 import React from "react";
 import type { ReactNode } from "react";
-import Polaroid from "./Polaroid";
-import yes from "@/public/headshots/xian.webp";
 
 export default function SectionBlock({
   children,
@@ -13,7 +11,7 @@ export default function SectionBlock({
   return (
     <section
       className={
-        `py-4 px-4 max-w-screen-xl mx-auto bg-white dark:bg-avocado-green my-5 rounded-2xl shadow-lg shadow-red-950` +
+        `py-4 px-4 max-w-screen-xl mx-auto bg-white dark:bg-avocado-green my-5 rounded-2xl shadow-lg shadow-red-600` +
         className
       }
     >
