@@ -25,9 +25,45 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-[url('../public/wallpaper_small.png')] bg-center bg-amber-600`}
+        className={`${geistSans.variable} ${geistMono.variable} relative min-h-screen`}
       >
-        {children}
+        {/* Background */}
+        <div className="fixed inset-0 bg-[url('../public/wallpaper_small.png')] bg-center"></div>
+
+        {/* 70s TV Vignette */}
+        <div
+          className="fixed inset-0"
+          style={{
+            background: `radial-gradient(
+              circle at center,
+              transparent 0%,
+              rgba(0, 0, 0, 0.7) 70%,
+              rgba(0, 0, 0, 0.9) 100%
+            )`,
+            boxShadow: "inset 0 0 150px rgba(0, 0, 0, 0.8)",
+            zIndex: 1,
+            pointerEvents: "none",
+          }}
+        >
+          {/* CRT Scanlines */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `repeating-linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.1) 0px,
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+              )`,
+              opacity: 0.5,
+              zIndex: 2,
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 min-h-screen">{children}</div>
       </body>
     </html>
   );

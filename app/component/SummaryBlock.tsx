@@ -13,10 +13,10 @@ export default function SummaryBlock({
 }: {
   title: string;
   position: string;
-  startDate: Date;
+  startDate: Date | null;
   endDate: Date | null;
   points: string[];
-  imageUrl: StaticImageData;
+  imageUrl: StaticImageData | null;
   isPhotoLeft: boolean;
 }) {
   const formatDate = (date: Date): string => {
@@ -26,12 +26,12 @@ export default function SummaryBlock({
     });
   };
 
-  const startDateString = formatDate(startDate);
+  const startDateString = startDate ? formatDate(startDate) : "";
   const endDateString = endDate ? formatDate(endDate) : "Present";
 
   const calculateDuration = (): string => {
-    const start = startDate.getTime();
-    const end = endDate ? endDate.getTime() : Date.now();
+    const start = startDate?.getTime() || 0;
+    const end = endDate?.getTime() || Date.now();
 
     const diffMs = Math.abs(end - start);
     const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
@@ -49,9 +49,15 @@ export default function SummaryBlock({
     return parts.join(" ");
   };
 
+  const hasDates = startDateString != "" && endDateString != "";
+
+  const duration = hasDates
+    ? startDateString + " - " + (endDateString ? endDateString : "Present")
+    : "";
+
   return (
     <div className="flex flex-row items-start w-full max-w-6xl mx-auto px-8 py-6">
-      {isPhotoLeft && (
+      {isPhotoLeft && imageUrl && (
         <div className="w-1/4 pr-6 flex-shrink-0">
           <Polaroid title={title} position="-rotate-3" imageUrl={imageUrl} />
         </div>
@@ -63,14 +69,14 @@ export default function SummaryBlock({
             <h3 className="text-xl font-semibold text-gray-200">{position}</h3>
             <h4 className="text-lg text-gray-300">{title}</h4>
           </div>
-          <div className="text-right">
-            <p className="text-md font-semibold text-gray-200">
-              {calculateDuration()}
-            </p>
-            <p className="text-sm text-gray-400">
-              {startDateString + " - " + endDateString}
-            </p>
-          </div>
+          {hasDates && (
+            <div className="text-right">
+              <p className="text-md font-semibold text-gray-200">
+                {calculateDuration()}
+              </p>
+              <p className="text-sm text-gray-400">{duration}</p>
+            </div>
+          )}
         </div>
 
         <div className="prose prose-invert max-w-none">
@@ -84,7 +90,7 @@ export default function SummaryBlock({
         </div>
       </div>
 
-      {!isPhotoLeft && (
+      {!isPhotoLeft && imageUrl && (
         <div className="w-1/4 pl-6 flex-shrink-0">
           <Polaroid title={title} position="rotate-3" imageUrl={imageUrl} />
         </div>

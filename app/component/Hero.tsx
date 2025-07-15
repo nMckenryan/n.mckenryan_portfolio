@@ -38,7 +38,7 @@ export default function Hero() {
   return (
     <SectionBlock>
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-12">
-        <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-12">
+        <div className="flex flex-row items-center lg:justify-center lg:space-x-12">
           <div className="mb-8 lg:mb-0 lg:flex-shrink-0">
             <Polaroid
               title="Nigel Mckenzie-Ryan"
@@ -78,11 +78,11 @@ export default function Hero() {
 
             <div className="mt-2">
               <a
-                href="#experience"
+                href="#projects"
                 className="inline-flex items-center px-8 py-3 text-lg font-medium rounded-full bg-cyan-500 hover:bg-cyan-600 text-white transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-cyan-500/20"
-                aria-label="View my experience"
+                aria-label="View my projects"
               >
-                Check out my experience
+                Check out what I&apos;ve built!
                 <ArrowDown />
               </a>
             </div>
