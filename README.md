@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
 
-## Getting Started
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-First, run the development server:
+Welcome to my personal portfolio website, built with Next.js, TypeScript, and modern web technologies. This project showcases my work, skills, and experience as a developer.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Responsive design that works on all devices
+- Modern UI with smooth animations and transitions
+- Project showcase with detailed case studies
+## 🛠️ Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: Tailwind CSS
+- **Type Checking**: TypeScript
+- **Deployment**: Vercel
+- **Icons**: React Icons (Mostly Good old Font Awesome)
+- **Animation**: Framer Motion
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏁 Getting Started
+TODO: 
 
-## Learn More
+[] Add scrolling animations
+[] Add a dark mode toggle
+[] Zhuge up job photos
+[] Take screenshots of apps
+[] Add links to apps
+[] Add CV download & update time?
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js 18.0 or later
+- npm or yarn package manager
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
+   cd portfolio
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Run the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+
+4. Plug your own stuff in otherwise things get weird, though i appreciate the marketing
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## 📦 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
+
+## 🎨 Customization
+
+- Update `app/page.tsx` to modify the home page
+- Add projects in the `app/projects` directory
+- Update styles in the `app/globals.css` file
+- Configure site metadata in `app/config/site.ts`
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shadcn/ui](https://ui.shadcn.com/)
+- [Vercel](https://vercel.com/) for the amazing deployment experience
+
+

@@ -10,10 +10,10 @@ import {
   publicWebsitePoints,
 } from "./jobParagraphs";
 import { FaTools, FaUniversity, FaUserTie } from "react-icons/fa";
-import fawLogo from "../public/fawLogo.png";
-import caLogo from "../public/ca.webp";
-import ecotLogo from "../public/ecotricity.png";
-import aut from "../public/AUT.jpeg";
+import fawLogo from "../public/joblogos/fawLogo.webp";
+import caLogo from "../public/joblogos/ca.webp";
+import ecotLogo from "../public/joblogos/ecotricity.webp";
+import aut from "../public/joblogos/AUT.webp";
 import Polaroid from "./component/Polaroid";
 
 export default function Home() {

@@ -28,7 +28,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} relative min-h-screen`}
       >
         {/* Background */}
-        <div className="fixed inset-0 bg-[url('../public/wallpaper_small.png')] bg-center"></div>
+        <div className="fixed inset-0 bg-[url('../public/wallpaper_small.webp')] bg-center"></div>
 
         {/* 70s TV Vignette */}
         <div

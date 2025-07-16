@@ -1,5 +1,5 @@
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
-import mainHeadshot from "@/public/headshots/cropped.webp";
+import mainHeadshot from "@/public/headshots/terracotta-warriors-cropped.webp";
 import SectionBlock from "./SectionBlock";
 import Polaroid from "./Polaroid";
 import "../styles/headshot.css";
