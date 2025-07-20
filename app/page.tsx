@@ -20,24 +20,40 @@ import autLocal from "@/public/static/joblogos/AUT.webp";
 import { StaticImageData } from "next/image";
 
 export default async function Home() {
-  const response = await list();
+  let terracottaHeadshot: string | StaticImageData = terracottaHeadshotLocal;
+  let aut: string | StaticImageData = autLocal;
+  let caLogo: string | StaticImageData = caLogoLocal;
+  let ecotLogo: string | StaticImageData = ecotLogoLocal;
+  let fawLogo: string | StaticImageData = fawLogoLocal;
 
-  const terracottaHeadshot: string | StaticImageData =
-    response.blobs.find((blob) => blob.url.includes("terracotta.webp"))?.url ||
-    terracottaHeadshotLocal;
+  try {
+    const response = await list();
 
-  const aut: string | StaticImageData =
-    response.blobs.find((blob) => blob.url.includes("AUT.webp"))?.url ||
-    autLocal;
-  const caLogo: string | StaticImageData =
-    response.blobs.find((blob) => blob.url.includes("ca.webp"))?.url ||
-    caLogoLocal;
-  const ecotLogo: string | StaticImageData =
-    response.blobs.find((blob) => blob.url.includes("ecotricity.webp"))?.url ||
-    ecotLogoLocal;
-  const fawLogo: string | StaticImageData =
-    response.blobs.find((blob) => blob.url.includes("fawLogo.webp"))?.url ||
-    fawLogoLocal;
+    const terracottaBlob = response.blobs.find((blob) =>
+      blob.url.includes("terracotta.webp")
+    );
+    const autBlob = response.blobs.find((blob) =>
+      blob.url.includes("AUT.webp")
+    );
+    const caLogoBlob = response.blobs.find((blob) =>
+      blob.url.includes("ca.webp")
+    );
+    const ecotLogoBlob = response.blobs.find((blob) =>
+      blob.url.includes("ecotricity.webp")
+    );
+    const fawLogoBlob = response.blobs.find((blob) =>
+      blob.url.includes("fawLogo.webp")
+    );
+
+    if (terracottaBlob) terracottaHeadshot = terracottaBlob.url;
+    if (autBlob) aut = autBlob.url;
+    if (caLogoBlob) caLogo = caLogoBlob.url;
+    if (ecotLogoBlob) ecotLogo = ecotLogoBlob.url;
+    if (fawLogoBlob) fawLogo = fawLogoBlob.url;
+  } catch (error) {
+    console.error("Error loading blobs:", error);
+    // Fall back to local images if there's an error
+  }
 
   return (
     <div className="px-4">
@@ -167,6 +183,7 @@ export default async function Home() {
             position="-rotate-2"
             imageUrl={aut}
             width={240}
+            height={240}
           />
         </div>
       </SectionBlock>

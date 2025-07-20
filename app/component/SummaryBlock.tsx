@@ -2,6 +2,16 @@ import React from "react";
 import Polaroid from "./Polaroid";
 import { StaticImageData } from "next/image";
 
+interface SummaryBlockProps {
+  title: string;
+  position: string;
+  startDate: Date | null;
+  endDate: Date | null;
+  points: string[];
+  imageUrl: string | StaticImageData | null;
+  isPhotoLeft: boolean;
+}
+
 export default function SummaryBlock({
   title,
   position,
@@ -10,24 +20,23 @@ export default function SummaryBlock({
   points,
   imageUrl,
   isPhotoLeft,
-}: {
-  title: string;
-  position: string;
-  startDate: Date | null;
-  endDate: Date | null;
-  points: string[];
-  imageUrl: string | StaticImageData | null;
-  isPhotoLeft: boolean;
-}) {
-  const formatDate = (date: Date): string => {
+}: SummaryBlockProps) {
+  const formatDate = (date: Date | null): string => {
+    if (!date) return "";
     return date.toLocaleString("en-US", {
       month: "long",
       year: "numeric",
     });
   };
 
-  const startDateString = startDate ? formatDate(startDate) : "";
+  const startDateString = formatDate(startDate);
   const endDateString = endDate ? formatDate(endDate) : "Present";
+
+  const dateRange = startDateString && (
+    <p className="text-sm text-gray-600 dark:text-gray-400">
+      {startDateString} - {endDateString}
+    </p>
+  );
 
   const calculateDuration = (): string => {
     const start = startDate?.getTime() || 0;
@@ -59,15 +68,27 @@ export default function SummaryBlock({
     <div className="flex flex-row items-start w-full max-w-6xl mx-auto px-8 py-6">
       {isPhotoLeft && imageUrl && (
         <div className="w-1/4 pr-6 flex-shrink-0">
-          <Polaroid title={title} position="-rotate-3" imageUrl={imageUrl} />
+          <Polaroid
+            title={title}
+            position="-rotate-3"
+            imageUrl={imageUrl}
+            width={240}
+            height={240}
+          />
         </div>
       )}
 
       <div className="flex-1 min-w-0">
         <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-4">
-          <div className="mb-2 md:mb-0">
-            <h3 className="text-xl font-semibold text-gray-200">{position}</h3>
-            <h4 className="text-lg text-gray-300">{title}</h4>
+          <div className="flex flex-col">
+            <h3 className="text-xl font-semibold">{title}</h3>
+            <h4 className="text-lg text-gray-700 dark:text-gray-300">
+              {position}
+            </h4>
+            {dateRange}
+            <p className="text-sm text-gray-500 dark:text-gray-500">
+              {calculateDuration()}
+            </p>
           </div>
           {hasDates && (
             <div className="text-right">
@@ -92,7 +113,13 @@ export default function SummaryBlock({
 
       {!isPhotoLeft && imageUrl && (
         <div className="w-1/4 pl-6 flex-shrink-0">
-          <Polaroid title={title} position="rotate-3" imageUrl={imageUrl} />
+          <Polaroid
+            title={title}
+            position="rotate-3"
+            imageUrl={imageUrl}
+            width={240}
+            height={240}
+          />
         </div>
       )}
     </div>
