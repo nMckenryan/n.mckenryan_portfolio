@@ -1,8 +1,8 @@
 import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
-import mainHeadshot from "@/public/static/headshots/terracotta-warriors-cropped.webp";
 import SectionBlock from "./SectionBlock";
 import Polaroid from "./Polaroid";
 import "../styles/headshot.css";
+import { StaticImageData } from "next/image";
 
 const socialLinks = [
   {
@@ -34,7 +34,11 @@ const ArrowDown = () => (
   </svg>
 );
 
-export default function Hero() {
+export default async function Hero({
+  headshot,
+}: {
+  headshot: string | StaticImageData;
+}) {
   return (
     <SectionBlock>
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-12">
@@ -43,7 +47,7 @@ export default function Hero() {
             <Polaroid
               title="Nigel Mckenzie-Ryan"
               position="-rotate-3"
-              imageUrl={mainHeadshot}
+              imageUrl={headshot}
             />
           </div>
 

@@ -10,16 +10,37 @@ import {
   publicWebsitePoints,
 } from "./jobParagraphs";
 import { FaTools, FaUniversity, FaUserTie } from "react-icons/fa";
-import fawLogo from "@/public/static/joblogos/fawLogo.webp";
-import caLogo from "@/public/static/joblogos/ca.webp";
-import ecotLogo from "@/public/static/joblogos/ecotricity.webp";
-import aut from "@/public/static/joblogos/AUT.webp";
 import Polaroid from "./component/Polaroid";
+import { list } from "@vercel/blob";
+import terracottaHeadshotLocal from "@/public/static/headshots/terracotta-warriors-cropped.webp";
+import fawLogoLocal from "@/public/static/joblogos/fawLogo.webp";
+import caLogoLocal from "@/public/static/joblogos/ca.webp";
+import ecotLogoLocal from "@/public/static/joblogos/ecotricity.webp";
+import autLocal from "@/public/static/joblogos/AUT.webp";
 
-export default function Home() {
+export default async function Home() {
+  const response = await list();
+
+  const terracottaHeadshot =
+    response.blobs.find((blob) => blob.url.includes("terracotta.webp"))?.url ||
+    terracottaHeadshotLocal;
+
+  const aut =
+    response.blobs.find((blob) => blob.url.includes("AUT.webp"))?.url ||
+    autLocal;
+  const caLogo =
+    response.blobs.find((blob) => blob.url.includes("ca.webp"))?.url ||
+    caLogoLocal;
+  const ecotLogo =
+    response.blobs.find((blob) => blob.url.includes("ecotricity.webp"))?.url ||
+    ecotLogoLocal;
+  const fawLogo =
+    response.blobs.find((blob) => blob.url.includes("fawLogo.webp"))?.url ||
+    fawLogoLocal;
+
   return (
     <div className="px-4">
-      <Hero />
+      <Hero headshot={terracottaHeadshot} />
 
       <SectionBlock>
         <div className="flex flex-row align-middle">

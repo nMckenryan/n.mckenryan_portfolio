@@ -1,17 +1,18 @@
 import Image, { StaticImageData } from "next/image";
 import "../styles/headshot.css";
 import placeholder from "../../public/landscape-placeholder.svg";
+import { list } from "@vercel/blob";
 
 interface PolaroidProps {
   title: string;
   position: string;
-  imageUrl: StaticImageData | null;
+  imageUrl: StaticImageData | string | null;
   width?: number | string;
   height?: number | string;
   className?: string;
 }
 
-export default function Polaroid({
+export default async function Polaroid({
   title,
   position,
   imageUrl,
