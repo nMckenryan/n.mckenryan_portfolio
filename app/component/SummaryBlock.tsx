@@ -16,7 +16,7 @@ export default function SummaryBlock({
   startDate: Date | null;
   endDate: Date | null;
   points: string[];
-  imageUrl: StaticImageData | null;
+  imageUrl: string | StaticImageData | null;
   isPhotoLeft: boolean;
 }) {
   const formatDate = (date: Date): string => {

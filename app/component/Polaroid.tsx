@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import "../styles/headshot.css";
 import placeholder from "../../public/landscape-placeholder.svg";
-import { list } from "@vercel/blob";
 
 interface PolaroidProps {
   title: string;

@@ -17,24 +17,25 @@ import fawLogoLocal from "@/public/static/joblogos/fawLogo.webp";
 import caLogoLocal from "@/public/static/joblogos/ca.webp";
 import ecotLogoLocal from "@/public/static/joblogos/ecotricity.webp";
 import autLocal from "@/public/static/joblogos/AUT.webp";
+import { StaticImageData } from "next/image";
 
 export default async function Home() {
   const response = await list();
 
-  const terracottaHeadshot =
+  const terracottaHeadshot: string | StaticImageData =
     response.blobs.find((blob) => blob.url.includes("terracotta.webp"))?.url ||
     terracottaHeadshotLocal;
 
-  const aut =
+  const aut: string | StaticImageData =
     response.blobs.find((blob) => blob.url.includes("AUT.webp"))?.url ||
     autLocal;
-  const caLogo =
+  const caLogo: string | StaticImageData =
     response.blobs.find((blob) => blob.url.includes("ca.webp"))?.url ||
     caLogoLocal;
-  const ecotLogo =
+  const ecotLogo: string | StaticImageData =
     response.blobs.find((blob) => blob.url.includes("ecotricity.webp"))?.url ||
     ecotLogoLocal;
-  const fawLogo =
+  const fawLogo: string | StaticImageData =
     response.blobs.find((blob) => blob.url.includes("fawLogo.webp"))?.url ||
     fawLogoLocal;
 
