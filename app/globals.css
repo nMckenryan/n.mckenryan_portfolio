@@ -33,6 +33,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'ITC Avant Garde Gothic';
+  src: url('/fonts/ITCAvantGardeGothicMedium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 
 :root {
@@ -60,6 +68,8 @@
 
 p, h1, h2, h3, h4, h5, h6, ul, ol, li {
   color: white;
+  font-family: 'ITC Avant Garde Gothic', sans-serif;
+  
 }
 
 @media (prefers-color-scheme: dark) {
