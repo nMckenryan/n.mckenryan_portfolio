@@ -25,7 +25,7 @@ TODO:
 
 [] Add scrolling animations
 [] Add a dark mode toggle
-[] Zhuge up job photos
+[] Zhuge up job photos (make images uniform size)
 [] Take screenshots of apps
 [] Add links to apps
 [] Add CV download & update time?

@@ -40,32 +40,33 @@ export default async function Hero({
   headshot: string | StaticImageData;
 }) {
   return (
-    <SectionBlock>
-      <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-12">
-        <div className="flex flex-row items-center lg:justify-center lg:space-x-12">
-          <div className="mb-8 lg:mb-0 lg:flex-shrink-0">
+    <SectionBlock className="overflow-x-hidden">
+      <div className="py-4 sm:py-6 px-4 mx-auto max-w-screen-xl lg:py-12 lg:px-12">
+        <div className="flex flex-col items-center md:flex-row lg:justify-center">
+          <div className="w-full max-w-[200px] sm:max-w-xs mx-auto lg:mx-0 lg:flex-shrink-0 mt-4 sm:mt-0">
             <Polaroid
-              title="Nigel Mckenzie-Ryan"
-              position="-rotate-3"
+              title="Welcome!"
+              position="lg:-rotate-3"
               imageUrl={headshot}
+              className="mx-auto"
             />
           </div>
 
-          <div className="text-center lg:text-left max-w-2xl">
+          <div className="text-center lg:text-left max-w-2xl w-full mt-2 sm:mt-0">
             <h1
-              className="mb-6 text-5xl md:text-6xl font-bold"
+              className="mb-4 text-4xl sm:text-5xl md:text-6xl font-bold"
               style={{ fontFamily: "'Beauty Mountains', sans-serif" }}
             >
               Nigel Mckenzie-Ryan
             </h1>
 
-            <p className="mb-8 text-lg md:text-xl text-gray-200 leading-relaxed px-4 sm:px-8 lg:px-0">
+            <p className="mb-6 sm:mb-8 text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed px-2 sm:px-4 lg:px-0">
               Hi! I&apos;m a software engineer from New Zealand with three years
               of experience. I specialize in building web applications using
               React, DotNet and TypeScript.
             </p>
 
-            <div className="flex justify-center lg:justify-start space-x-4 mb-8">
+            <div className="flex justify-center lg:justify-start space-x-6 sm:space-x-8 mb-6 sm:mb-8">
               {socialLinks.map(({ name, url, icon: Icon }) => (
                 <a
                   key={name}
@@ -75,7 +76,7 @@ export default async function Hero({
                   className="text-white hover:text-cyan-400 transition-colors duration-200"
                   aria-label={name}
                 >
-                  <Icon size={36} />
+                  <Icon className="w-8 h-8 sm:w-9 sm:h-9" />
                 </a>
               ))}
             </div>
@@ -83,10 +84,10 @@ export default async function Hero({
             <div className="mt-2">
               <a
                 href="#projects"
-                className="inline-flex items-center px-8 py-3 text-lg font-medium rounded-full bg-cyan-500 hover:bg-cyan-600 text-white transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-cyan-500/20"
+                className="inline-flex items-center px-6 sm:px-8 py-2.5 sm:py-3 text-base sm:text-lg font-medium rounded-full bg-cyan-500 hover:bg-cyan-600 text-white transition-all duration-200 shadow-md hover:shadow-lg hover:shadow-cyan-500/20 whitespace-nowrap"
                 aria-label="View my projects"
               >
-                Check out what I&apos;ve built!
+                View My Projects
                 <ArrowDown />
               </a>
             </div>

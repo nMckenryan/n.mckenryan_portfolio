@@ -18,7 +18,7 @@ export default function Polaroid({
   title,
   position,
   imageUrl,
-  width = 240, // Default width in pixels
+  width = 200, // Default width in pixels
   height,
   className = "",
 }: PolaroidProps) {
@@ -79,7 +79,7 @@ export default function Polaroid({
   return (
     <div
       id="photo"
-      className={`rimRotate ${position} ${className}`}
+      className={`rimRotate ${position} ${className} transform sm:scale-100 scale-75 origin-top sm:origin-center transition-transform duration-200`}
       style={{
         width: typeof width === "number" ? `${width}px` : width,
         height: height
@@ -93,18 +93,20 @@ export default function Polaroid({
     >
       <div className="inner bg-yellow-50 pt-2 px-2 shadow-lg h-full w-full flex flex-col">
         <div className="flex-1 relative overflow-hidden">
-          <Image
-            src={imgSrc}
-            alt={title}
-            width={numericWidth || 240}
-            height={numericHeight}
-            className="w-full h-auto object-cover"
-            priority
-            onError={() => {
-              console.error("Error loading image:", imgSrc);
-              setImgSrc(placeholder);
-            }}
-          />
+          <div className="w-full h-full flex items-center justify-center">
+            <Image
+              src={imgSrc}
+              alt={title}
+              width={numericWidth || 240}
+              height={numericHeight}
+              className="w-full h-full object-contain"
+              priority
+              onError={() => {
+                console.error("Error loading image:", imgSrc);
+                setImgSrc(placeholder);
+              }}
+            />
+          </div>
         </div>
         <h4
           className="text-center xs:text-xs lg:text-md m-5 font-serif"

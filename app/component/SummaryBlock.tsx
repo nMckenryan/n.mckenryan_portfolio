@@ -32,12 +32,6 @@ export default function SummaryBlock({
   const startDateString = formatDate(startDate);
   const endDateString = endDate ? formatDate(endDate) : "Present";
 
-  const dateRange = startDateString && (
-    <p className="text-sm text-gray-600 dark:text-gray-400">
-      {startDateString} - {endDateString}
-    </p>
-  );
-
   const calculateDuration = (): string => {
     const start = startDate?.getTime() || 0;
     const end = endDate?.getTime() || Date.now();
@@ -65,63 +59,57 @@ export default function SummaryBlock({
     : "";
 
   return (
-    <div className="flex flex-row items-start w-full max-w-6xl mx-auto px-8 py-6">
-      {isPhotoLeft && imageUrl && (
-        <div className="w-1/4 pr-6 flex-shrink-0">
-          <Polaroid
-            title={title}
-            position="-rotate-3"
-            imageUrl={imageUrl}
-            width={240}
-            height={240}
-          />
-        </div>
-      )}
-
-      <div className="flex-1 min-w-0">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-4">
-          <div className="flex flex-col">
-            <h3 className="text-xl font-semibold">{title}</h3>
-            <h4 className="text-lg text-gray-700 dark:text-gray-300">
-              {position}
-            </h4>
-            {dateRange}
-            <p className="text-sm text-gray-500 dark:text-gray-500">
-              {calculateDuration()}
-            </p>
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-6">
+      <div
+        className={`flex flex-col ${
+          !isPhotoLeft ? "md:flex-row-reverse" : "md:flex-row"
+        } items-start gap-6`}
+      >
+        {/* Image Section */}
+        {imageUrl && (
+          <div className="w-full max-w-[240px] mx-auto md:mx-0 md:w-1/4 flex-shrink-0">
+            <Polaroid
+              title={title}
+              position={isPhotoLeft ? "md:-rotate-3" : "md:rotate-3"}
+              imageUrl={imageUrl}
+              className="mx-auto"
+              width={200}
+              height={240}
+            />
           </div>
-          {hasDates && (
-            <div className="text-right">
-              <p className="text-md font-semibold text-gray-200">
-                {calculateDuration()}
-              </p>
-              <p className="text-sm text-gray-400">{duration}</p>
-            </div>
-          )}
-        </div>
+        )}
 
-        <div className="prose prose-invert max-w-none">
-          <ul className="space-y-2 pl-5">
-            {points.map((point, index) => (
-              <li key={index} className="text-gray-300">
-                {point}
-              </li>
-            ))}
-          </ul>
+        {/* Content Section */}
+        <div className="flex-1 min-w-0 w-full">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-4">
+            <div className="flex-1">
+              <h3 className="text-lg sm:text-xl font-semibold text-white">
+                {title}
+              </h3>
+              <h4 className="text-base sm:text-lg text-gray-300">{position}</h4>
+            </div>
+
+            {hasDates && (
+              <div className="text-left sm:text-right mt-1 sm:mt-0">
+                <p className="text-sm sm:text-base font-medium text-cyan-400">
+                  {calculateDuration()}
+                </p>
+                <p className="text-xs sm:text-sm text-gray-400">{duration}</p>
+              </div>
+            )}
+          </div>
+
+          <div className="prose prose-invert max-w-none">
+            <ul className="space-y-2 pl-5 list-disc">
+              {points.map((point, index) => (
+                <li key={index} className="text-gray-300 text-sm sm:text-base">
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-
-      {!isPhotoLeft && imageUrl && (
-        <div className="w-1/4 pl-6 flex-shrink-0">
-          <Polaroid
-            title={title}
-            position="rotate-3"
-            imageUrl={imageUrl}
-            width={240}
-            height={240}
-          />
-        </div>
-      )}
     </div>
   );
 }

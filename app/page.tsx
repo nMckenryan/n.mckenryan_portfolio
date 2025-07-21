@@ -123,8 +123,8 @@ export default async function Home() {
         <div className="flex flex-col">
           <>
             <SummaryBlock
-              title="A TV Show Content Review Platform"
-              position="CringeTV"
+              title="CringeTV"
+              position="A TV Show Content Review Platform"
               startDate={null}
               points={projectPoints}
               endDate={null}
@@ -133,8 +133,8 @@ export default async function Home() {
             />
             <div className="divider h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent my-8 mx-4" />
             <SummaryBlock
-              title="Web Scraper and API"
-              position="Pokemon Unbound Scraper"
+              title="Pokemon Unbound Scraper"
+              position="Web Scraper and API for the Pokemon Unbound Fan Game"
               startDate={null}
               points={pokemonProjectPoints}
               endDate={null}
@@ -144,8 +144,8 @@ export default async function Home() {
             <div className="divider h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent my-8 mx-4" />
 
             <SummaryBlock
-              title="Building a Public Website for Camp Australia using Strapi and React"
-              position="Camp Australia Public Website"
+              title="Camp Australia Public Website"
+              position="Developing a revamped Public Website for Camp Australia"
               startDate={null}
               points={publicWebsitePoints}
               endDate={null}
@@ -168,21 +168,25 @@ export default async function Home() {
           </h1>
         </div>
 
-        <div className="flex flex-row">
+        <div className="flex flex-col md:flex-row align-middle items-center">
           <div className="flex flex-col w-3/4">
-            <h1>Graduate Diploma of Computing and Information Sciences</h1>
-            <h2>Auckland University of Technology</h2>
-            <h2>2017 - 2018</h2>
+            <h1 className="text-md font-semibold">
+              Graduate Diploma of Computing and Information Sciences
+            </h1>
+            <h2 className="text-sm">Auckland University of Technology</h2>
+            <h2 className="text-sm">2017 - 2018</h2>
             <div className="divider h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent my-8 mx-4" />
-            <h1>Bachelor of Communications (Radio Major)</h1>
-            <h2>Auckland University of Technology</h2>
-            <h2>2012 - 2014</h2>
+            <h1 className="text-md font-semibold">
+              Bachelor of Communications (Radio Major)
+            </h1>
+            <h2 className="text-sm">Auckland University of Technology</h2>
+            <h2 className="text-sm">2012 - 2014</h2>
           </div>
           <Polaroid
             title="AUT"
             position="-rotate-2"
             imageUrl={aut}
-            width={240}
+            width={200}
             height={240}
           />
         </div>
