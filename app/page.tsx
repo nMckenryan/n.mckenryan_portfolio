@@ -19,6 +19,48 @@ import ecotLogoLocal from "@/public/static/joblogos/ecotricity.webp";
 import autLocal from "@/public/static/joblogos/AUT.webp";
 import { StaticImageData } from "next/image";
 
+function Divider() {
+  return (
+    <div className="divider h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent my-4 mx-4" />
+  );
+}
+
+function EducationBlock() {
+  return (
+    <div className="flex-1 min-w-0 w-full">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-4">
+        <div className="flex-1">
+          <h3 className="text-lg sm:text-xl font-semibold text-white">
+            Graduate Diploma of Computing and Information Sciences
+          </h3>
+          <h4 className="text-base sm:text-lg text-gray-300">2017 - 2018</h4>
+        </div>
+
+        <div className="text-left sm:text-right mt-1 sm:mt-0">
+          <p className="text-sm sm:text-base font-medium text-cyan-400">
+            Auckland University of Technology
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-4">
+        <div className="flex-1">
+          <h3 className="text-lg sm:text-xl font-semibold text-white">
+            Bachelor of Communications (Radio Major)
+          </h3>
+          <h4 className="text-base sm:text-lg text-gray-300">2012 - 2014</h4>
+        </div>
+
+        <div className="text-left sm:text-right mt-1 sm:mt-0">
+          <p className="text-sm sm:text-base font-medium text-cyan-400">
+            Auckland University of Technology
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default async function Home() {
   let terracottaHeadshot: string | StaticImageData = terracottaHeadshotLocal;
   let aut: string | StaticImageData = autLocal;
@@ -82,8 +124,7 @@ export default async function Home() {
               imageUrl={fawLogo}
               isPhotoLeft={true}
             />
-            <div className="divider h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent my-8 mx-4" />
-
+            <Divider />
             <SummaryBlock
               title="Camp Australia"
               position="Web Developer"
@@ -93,8 +134,7 @@ export default async function Home() {
               imageUrl={caLogo}
               isPhotoLeft={false}
             />
-            <div className="divider h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent my-8 mx-4" />
-
+            <Divider />
             <SummaryBlock
               title="Ecotricity"
               position="Information Technology Administrator"
@@ -131,7 +171,7 @@ export default async function Home() {
               imageUrl={null}
               isPhotoLeft={true}
             />
-            <div className="divider h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent my-8 mx-4" />
+            <Divider />
             <SummaryBlock
               title="Pokemon Unbound Scraper"
               position="Web Scraper and API for the Pokemon Unbound Fan Game"
@@ -141,7 +181,7 @@ export default async function Home() {
               imageUrl={null}
               isPhotoLeft={true}
             />
-            <div className="divider h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent my-8 mx-4" />
+            <Divider />
 
             <SummaryBlock
               title="Camp Australia Public Website"
@@ -168,21 +208,11 @@ export default async function Home() {
           </h1>
         </div>
 
-        <div className="flex flex-col md:flex-row align-middle items-center">
-          <div className="flex flex-col w-3/4">
-            <h1 className="text-md font-semibold">
-              Graduate Diploma of Computing and Information Sciences
-            </h1>
-            <h2 className="text-sm">Auckland University of Technology</h2>
-            <h2 className="text-sm">2017 - 2018</h2>
-            <div className="divider h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent my-8 mx-4" />
-            <h1 className="text-md font-semibold">
-              Bachelor of Communications (Radio Major)
-            </h1>
-            <h2 className="text-sm">Auckland University of Technology</h2>
-            <h2 className="text-sm">2012 - 2014</h2>
-          </div>
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-6">
+          <EducationBlock />
+
           <Polaroid
+            className="mx-auto"
             title="AUT"
             position="-rotate-2"
             imageUrl={aut}
