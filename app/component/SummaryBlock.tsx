@@ -91,7 +91,7 @@ export default function SummaryBlock({
 
             {hasDates && (
               <div className="text-left sm:text-right mt-1 sm:mt-0">
-                <p className="text-sm sm:text-base font-medium text-cyan-400">
+                <p className="text-xs sm:text-base font-medium text-cyan-400">
                   {calculateDuration()}
                 </p>
                 <p className="text-xs sm:text-sm text-gray-400">{duration}</p>
@@ -102,7 +102,7 @@ export default function SummaryBlock({
           <div className="prose prose-invert max-w-none">
             <ul className="space-y-2 pl-5 list-disc">
               {points.map((point, index) => (
-                <li key={index} className="text-gray-300 text-sm sm:text-base">
+                <li key={index} className="text-gray-300 text-xs sm:text-base">
                   {point}
                 </li>
               ))}
