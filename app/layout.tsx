@@ -38,35 +38,35 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/public/favicon.ico",
+        url: "/favicon.ico",
         type: "image/x-icon",
       },
       {
-        url: "/public/android-chrome-192x192.png",
+        url: "/android-chrome-192x192.png",
         type: "image/png",
         sizes: "192x192",
       },
       {
-        url: "/public/android-chrome-512x512.png",
+        url: "/android-chrome-512x512.png",
         type: "image/png",
         sizes: "512x512",
       },
       {
-        url: "/public/favicon-32x32.png",
+        url: "/favicon-32x32.png",
         type: "image/png",
         sizes: "32x32",
       },
       {
-        url: "/public/favicon-16x16.png",
+        url: "/favicon-16x16.png",
         type: "image/png",
         sizes: "16x16",
       },
       {
-        url: "/public/site.webmanifest",
+        url: "/site.webmanifest",
         type: "application/manifest+json",
       },
       {
-        url: "/public/apple-touch-icon.png",
+        url: "/apple-touch-icon.png",
         type: "image/png",
         sizes: "180x180",
       },

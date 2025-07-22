@@ -67,7 +67,7 @@ export default function SummaryBlock({
       >
         {/* Image Section */}
         {imageUrl && (
-          <div className="w-full max-w-[240px] mx-auto md:mx-0 md:w-1/4 flex-shrink-0">
+          <div className="flex flex-col w-full h-full max-w-[240px] mx-auto md:mx-0 md:w-1/4">
             <Polaroid
               title={title}
               position={isPhotoLeft ? "md:-rotate-3" : "md:rotate-3"}
@@ -80,13 +80,13 @@ export default function SummaryBlock({
         )}
 
         {/* Content Section */}
-        <div className="flex-1 min-w-0 w-full">
+        <div className="min-w-0 w-full flex flex-col">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-4">
             <div className="flex-1">
               <h3 className="text-lg sm:text-xl font-semibold text-white">
                 {title}
               </h3>
-              <h4 className="text-base sm:text-lg text-gray-300">{position}</h4>
+              <h4 className="text-sm sm:text-base text-gray-300">{position}</h4>
             </div>
 
             {hasDates && (
@@ -102,7 +102,7 @@ export default function SummaryBlock({
           <div className="prose prose-invert max-w-none">
             <ul className="space-y-2 pl-5 list-disc">
               {points.map((point, index) => (
-                <li key={index} className="text-gray-300 text-xs sm:text-base">
+                <li key={index} className="text-gray-300 text-xs sm:text-sm">
                   {point}
                 </li>
               ))}

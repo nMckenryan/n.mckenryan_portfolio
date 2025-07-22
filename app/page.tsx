@@ -63,7 +63,7 @@ function EducationBlock() {
 
 export default async function Home() {
   let terracottaHeadshot: string | StaticImageData = terracottaHeadshotLocal;
-  let aut: string | StaticImageData = autLocal;
+  //let aut: string | StaticImageData = autLocal;
   let caLogo: string | StaticImageData = caLogoLocal;
   let ecotLogo: string | StaticImageData = ecotLogoLocal;
   let fawLogo: string | StaticImageData = fawLogoLocal;
@@ -74,9 +74,9 @@ export default async function Home() {
     const terracottaBlob = response.blobs.find((blob) =>
       blob.url.includes("terracotta.webp")
     );
-    const autBlob = response.blobs.find((blob) =>
-      blob.url.includes("AUT.webp")
-    );
+    // const autBlob = response.blobs.find((blob) =>
+    //   blob.url.includes("AUT.webp")
+    // );
     const caLogoBlob = response.blobs.find((blob) =>
       blob.url.includes("ca.webp")
     );
@@ -88,7 +88,7 @@ export default async function Home() {
     );
 
     if (terracottaBlob) terracottaHeadshot = terracottaBlob.url;
-    if (autBlob) aut = autBlob.url;
+    //if (autBlob) aut = autBlob.url;
     if (caLogoBlob) caLogo = caLogoBlob.url;
     if (ecotLogoBlob) ecotLogo = ecotLogoBlob.url;
     if (fawLogoBlob) fawLogo = fawLogoBlob.url;
@@ -98,7 +98,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="px-4">
+    <div>
       <Hero headshot={terracottaHeadshot} />
 
       <SectionBlock>
@@ -214,8 +214,8 @@ export default async function Home() {
           <Polaroid
             className="mx-auto"
             title="AUT"
-            position="-rotate-2"
-            imageUrl={aut}
+            position="-rotate-0"
+            imageUrl={autLocal}
             width={200}
             height={240}
           />

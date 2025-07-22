@@ -25,20 +25,6 @@ export default function Polaroid({
   const [imgSrc, setImgSrc] = useState<string | StaticImageData>(placeholder);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Convert width/height to numbers if they're strings with 'px'
-  const getNumericValue = (
-    value: string | number | undefined
-  ): number | undefined => {
-    if (typeof value === "number") return value;
-    if (typeof value === "string" && value.endsWith("px")) {
-      return parseInt(value, 10) || undefined;
-    }
-    return undefined;
-  };
-
-  const numericWidth = getNumericValue(width);
-  const numericHeight = getNumericValue(height);
-
   useEffect(() => {
     if (imageUrl) {
       const img = new window.Image();
@@ -78,29 +64,25 @@ export default function Polaroid({
 
   return (
     <div
-      id="photo"
-      className={`rimRotate ${position} ${className} transform sm:scale-100 scale-75 origin-top sm:origin-center transition-transform duration-200`}
+      id="photo-crt"
+      className={`${position} ${className} transform sm:scale-100 scale-75 origin-top sm:origin-center transition-transform duration-200`}
       style={{
-        width: typeof width === "number" ? `${width}px` : width,
-        height: height
-          ? typeof height === "number"
-            ? `${height}px`
-            : height
-          : "auto",
+        width: typeof width === "number" ? `${width}px` : width || "100%",
         maxWidth: "100%",
-        aspectRatio: "3/4", // Maintain polaroid aspect ratio
+        aspectRatio: "3/4", // Classic Polaroid aspect ratio (3:4)
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      <div className="inner bg-yellow-50 pt-2 px-2 shadow-lg h-full w-full flex flex-col">
-        <div className="flex-1 relative overflow-hidden">
-          <div className="w-full h-full flex items-center justify-center">
+      <div className="bg-yellow-50 p-2 rounded-sm shadow-lg h-full w-full flex flex-col flex-1 min-h-0">
+        <div className="relative flex-1 min-h-0 w-full">
+          <div className="absolute inset-0 flex items-center justify-center p-2">
             <Image
               src={imgSrc}
               alt={title}
-              width={numericWidth || 240}
-              height={numericHeight}
-              className="w-full h-full object-contain"
-              priority
+              fill
+              className="object-contain"
+              loading="lazy"
               onError={() => {
                 console.error("Error loading image:", imgSrc);
                 setImgSrc(placeholder);
@@ -108,8 +90,9 @@ export default function Polaroid({
             />
           </div>
         </div>
+
         <h4
-          className="text-center xs:text-xs lg:text-md m-5 font-serif"
+          className="text-center text-xs xl:text-md mt-2 mb-4 font-serif flex-shrink-0"
           style={{ fontFamily: "'Dallia Bold', sans-serif", color: "black" }}
         >
           {title}

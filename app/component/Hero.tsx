@@ -3,6 +3,7 @@ import SectionBlock from "./SectionBlock";
 import Polaroid from "./Polaroid";
 import "../styles/headshot.css";
 import { StaticImageData } from "next/image";
+import "../styles/crt-effect.css";
 
 function SocialLinks({ customStyle }: { customStyle: string }) {
   const socialLinks = [
@@ -35,7 +36,7 @@ function SocialLinks({ customStyle }: { customStyle: string }) {
           className="text-white hover:text-cyan-400 transition-colors duration-200"
           aria-label={name}
         >
-          <Icon className="w-8 h-8 sm:w-9 sm:h-9" />
+          <Icon className="w-8 h-8 sm:w-9 sm:h-9" id="icon-crt" />
         </a>
       ))}
     </div>
@@ -55,13 +56,16 @@ export default async function Hero({
       >
         Nigel Mckenzie-Ryan
       </h1>
+      <p className="mb-4 text-md sm:text-lg md:text-xl font-semibold text-center">
+        Melbourne, Australia
+      </p>
 
       <div className="py-4 sm:py-6 px-4 mx-auto max-w-screen-xl lg:py-12 lg:px-12">
         <div className="flex flex-col items-center md:flex-row lg:justify-center">
           <div className="w-full max-w-[200px] sm:max-w-xs mx-auto lg:mx-0 lg:flex-shrink-0 mt-4 sm:mt-0">
             <Polaroid
               title="Welcome!"
-              position="lg:-rotate-3"
+              position="rotate-0"
               imageUrl={headshot}
               className="mx-auto"
             />
