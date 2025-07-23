@@ -3,7 +3,7 @@ import SectionBlock from "./SectionBlock";
 import Polaroid from "./Polaroid";
 import "../styles/headshot.css";
 import { StaticImageData } from "next/image";
-import "../styles/crt-effect.css";
+import "../styles/crt-eff.scss";
 
 function SocialLinks({ customStyle }: { customStyle: string }) {
   const socialLinks = [

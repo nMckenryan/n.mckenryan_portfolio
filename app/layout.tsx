@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "./styles/crt-eff.scss";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next";
 import "./styles/crt-effect.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -85,9 +86,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} relative min-h-screen`}
       >
-        {/* Background */}
-        <div className="fixed inset-0 bg-[url('../public/wallpaper_small.webp')] bg-center"></div>
-
         {/* 70s TV Vignette */}
         <div
           className="fixed inset-0"
@@ -102,25 +100,14 @@ export default function RootLayout({
             zIndex: 1,
             pointerEvents: "none",
           }}
-        >
-          {/* CRT Scanlines */}
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `repeating-linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.1) 0px,
-                rgba(0, 0, 0, 0.1) 1px,
-                transparent 1px,
-                transparent 2px
-              )`,
-              opacity: 0.5,
-              zIndex: 2,
-            }}
-          />{" "}
-        </div>
+        />
+        {/* Background */}
+        <div className="fixed inset-0 bg-[url('../public/wallpaper_small.webp')] bg-center"></div>
+
         {/* Content */}
-        <div className="relative z-10 min-h-screen">{children}</div>
+        <div className="relative z-10 min-h-screen overflow-auto">
+          <div className="container mx-auto px-4">{children}</div>
+        </div>
       </body>
     </html>
   );

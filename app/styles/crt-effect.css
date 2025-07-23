@@ -4,8 +4,9 @@
 */
 
 
-  html { background: #111;
-         padding: 1em;
+html { 
+  background: #111;
+
          font-family: Noto Sans Display;
          color: #eee;
          font-size: 1em;
@@ -28,20 +29,6 @@
     animation-direction: alternate;
   }
 
-
-  @media screen and (min-width: 1200px) {
-    body {
-        margin-left: 20rem;
-        margin-right: 20rem;
-    }
-  }
-
-  @media screen and (min-width: 600px) {
-      body {
-          margin-left: 5em;
-          margin-right: 5em;
-      }
-  }
   
   @keyframes textflicker {
     from {
