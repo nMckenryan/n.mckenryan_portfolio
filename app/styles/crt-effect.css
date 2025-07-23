@@ -29,6 +29,16 @@ html {
     animation-direction: alternate;
   }
 
+ section {
+    box-shadow: 0.01rem 0 0.1rem #ea36af;
+    animation-duration: 0.00001s;
+    animation-name: boxflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  
+
   
   @keyframes textflicker {
     from {

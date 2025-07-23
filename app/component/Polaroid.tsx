@@ -82,6 +82,10 @@ export default function Polaroid({
               alt={title}
               fill
               className="object-contain"
+              style={{
+                filter:
+                  "blur(0.05em) saturate(0.7) contrast(1.5) brightness(1.1)",
+              }}
               loading="lazy"
               onError={() => {
                 console.error("Error loading image:", imgSrc);

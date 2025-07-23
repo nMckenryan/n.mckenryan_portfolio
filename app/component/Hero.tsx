@@ -57,14 +57,14 @@ export default async function Hero({
         Nigel Mckenzie-Ryan
       </h1>
       <p className="mb-4 text-md sm:text-lg md:text-xl font-semibold text-center">
-        Melbourne, Australia
+        Web Developer - Melbourne, Australia
       </p>
 
       <div className="py-4 sm:py-6 px-4 mx-auto max-w-screen-xl lg:py-12 lg:px-12">
         <div className="flex flex-col items-center md:flex-row lg:justify-center">
           <div className="w-full max-w-[200px] sm:max-w-xs mx-auto lg:mx-0 lg:flex-shrink-0 mt-4 sm:mt-0">
             <Polaroid
-              title="Welcome!"
+              title="Welcome to my Webzone"
               position="rotate-0"
               imageUrl={headshot}
               className="mx-auto"
@@ -74,9 +74,13 @@ export default async function Hero({
 
           <div className="text-left lg:text-left max-w-2xl w-full mt-2 sm:mt-0">
             <p className="mb-6 sm:mb-8 text-base sm:text-lg   text-gray-200 leading-relaxed px-2 sm:px-4 lg:px-0">
-              Hello! I&apos;m a software engineer from New Zealand with three
-              years of experience. I specialize in building web applications
-              using React, DotNet and TypeScript.
+              Hello! I&apos;m a Full Stack Web Developer from New Zealand with
+              three years of professional experience. I specialize in building
+              web applications using React, Vue, Typescript/Javascript and .NET.
+            </p>
+            <p className="mb-6 sm:mb-8 text-base sm:text-lg   text-gray-200 leading-relaxed px-2 sm:px-4 lg:px-0">
+              I enjoy learning new technologies and building new projects with
+              them. Feel free to contact me on LinkedIn!
             </p>
           </div>
         </div>
