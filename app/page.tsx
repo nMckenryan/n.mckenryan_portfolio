@@ -39,9 +39,7 @@ function EducationBlock() {
         </div>
 
         <div className="text-left sm:text-right mt-1 sm:mt-0">
-          <p className="text-sm sm:text-base font-medium text-cyan-400">
-            Auckland University of Technology
-          </p>
+          <p className="text-sm sm:text-base font-medium text-cyan-400">AUT</p>
         </div>
       </div>
 
@@ -54,9 +52,7 @@ function EducationBlock() {
         </div>
 
         <div className="text-left sm:text-right mt-1 sm:mt-0">
-          <p className="text-sm sm:text-base font-medium text-cyan-400">
-            Auckland University of Technology
-          </p>
+          <p className="text-sm sm:text-base font-medium text-cyan-400">AUT</p>
         </div>
       </div>
     </div>
