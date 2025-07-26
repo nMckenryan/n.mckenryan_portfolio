@@ -65,7 +65,7 @@ export default function Polaroid({
   return (
     <div
       id="photo-crt"
-      className={`${position} ${className} transform sm:scale-100 scale-75 origin-top sm:origin-center transition-transform duration-200`}
+      className={`${position} ${className} transform sm:scale-100 scale-90 bg-origin-content sm:origin-center transition-transform duration-200`}
       style={{
         width: typeof width === "number" ? `${width}px` : width || "100%",
         maxWidth: "100%",

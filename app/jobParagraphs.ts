@@ -23,6 +23,19 @@ export const ecotPoints: string[] = [
     "Promoted a sense of trust with Ecotricity customers by delivering accurate invoicing each month, easing the number of requests to the customer se   vice, metering and invoicing teams.",
 ];
 
+export const wecPoints: string[] = [
+    "Updating the Websites of the company's Brands and Financial Education Platform",
+    "Co-ordinating with Stakeholders regarding Project Requirements.",
+    "Building Vue.Js Solutions to conform into Wordpress styling",
+    "Scouting and repairing Compliance errors and Software bugs.",
+]
+
+export const thisWebsitePoints: string[] = [
+    "Built this responsive  Portfolio/CV site using NextJS, TailwindCSS and SASS",
+    "Created a Retro TV/CRT effect using CSS/SASS",
+    "Optimised SEO using NextJS tools and Vercel Analytics Features"
+]
+
 export const projectPoints: string[] = [
     "Identified a need for a community driven platform where users can share reviews for TV shows based on how appropriate they are to recommend to parents or other loved ones.",
     "Built the website UI with ReactJS, TailwindCSS and the DaisyUI User Interface Library",

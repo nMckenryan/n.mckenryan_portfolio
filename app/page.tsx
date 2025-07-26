@@ -4,12 +4,14 @@ import SummaryBlock from "./component/SummaryBlock";
 import {
   caPoints,
   ecotPoints,
+  wecPoints,
   fieldAtWorkPoints,
   pokemonProjectPoints,
   projectPoints,
   publicWebsitePoints,
+  thisWebsitePoints,
 } from "./jobParagraphs";
-import { FaTools, FaUniversity, FaUserTie } from "react-icons/fa";
+import { FaGithub, FaTools, FaUniversity, FaUserTie } from "react-icons/fa";
 import Polaroid from "./component/Polaroid";
 import { list } from "@vercel/blob";
 import terracottaHeadshotLocal from "@/public/static/headshots/terracotta-warriors-cropped.webp";
@@ -21,7 +23,7 @@ import { StaticImageData } from "next/image";
 
 function Divider() {
   return (
-    <div className="divider h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent my-4 mx-4" />
+    <div className="divider h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent my-6 mx-4" />
   );
 }
 
@@ -30,7 +32,7 @@ function EducationBlock() {
     <div className="flex-1 min-w-0 w-full">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-4">
         <div className="flex-1">
-          <h3 className="text-lg sm:text-xl font-semibold text-white">
+          <h3 className="text-md sm:text-lg font-semibold text-white">
             Graduate Diploma of Computing and Information Sciences
           </h3>
           <h4 className="text-base sm:text-lg text-gray-300">2017 - 2018</h4>
@@ -45,7 +47,7 @@ function EducationBlock() {
 
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-4">
         <div className="flex-1">
-          <h3 className="text-lg sm:text-xl font-semibold text-white">
+          <h3 className="text-md sm:text-lg font-semibold text-white">
             Bachelor of Communications (Radio Major)
           </h3>
           <h4 className="text-base sm:text-lg text-gray-300">2012 - 2014</h4>
@@ -114,37 +116,45 @@ export default async function Home() {
         </div>
 
         <div className="flex flex-col">
-          <>
-            <SummaryBlock
-              title="Field At Work"
-              position="Software Engineer"
-              startDate={new Date("2025-03-17")}
-              points={fieldAtWorkPoints}
-              endDate={null}
-              imageUrl={fawLogo}
-              isPhotoLeft={true}
-            />
-            <Divider />
-            <SummaryBlock
-              title="Camp Australia"
-              position="Web Developer"
-              startDate={new Date("2022-03-11")}
-              points={caPoints}
-              endDate={new Date("2024-06-17")}
-              imageUrl={caLogo}
-              isPhotoLeft={false}
-            />
-            <Divider />
-            <SummaryBlock
-              title="Ecotricity"
-              position="Information Technology Administrator"
-              startDate={new Date("2019-08-10")}
-              points={ecotPoints}
-              endDate={new Date("2020-10-10")}
-              imageUrl={ecotLogo}
-              isPhotoLeft={true}
-            />
-          </>
+          <SummaryBlock
+            title="Field At Work"
+            position="Software Engineer"
+            startDate={new Date("2025-03-17")}
+            points={fieldAtWorkPoints}
+            endDate={null}
+            imageUrl={fawLogo}
+            isPhotoLeft={true}
+          />
+          <Divider />
+          <SummaryBlock
+            title="Camp Australia"
+            position="Web Developer"
+            startDate={new Date("2022-03-11")}
+            points={caPoints}
+            endDate={new Date("2024-06-17")}
+            imageUrl={caLogo}
+            isPhotoLeft={false}
+          />
+          <Divider />
+          <SummaryBlock
+            title="Cash Kings"
+            position="Web Developer (Contract)"
+            startDate={new Date("2021-03-1")}
+            points={wecPoints}
+            endDate={new Date("2021-06-29")}
+            imageUrl={null}
+            isPhotoLeft={true}
+          />
+          <Divider />
+          <SummaryBlock
+            title="Ecotricity"
+            position="Information Technology Administrator"
+            startDate={new Date("2019-08-10")}
+            points={ecotPoints}
+            endDate={new Date("2020-10-10")}
+            imageUrl={ecotLogo}
+            isPhotoLeft={true}
+          />
         </div>
       </SectionBlock>
 
@@ -170,6 +180,12 @@ export default async function Home() {
               endDate={null}
               imageUrl={null}
               isPhotoLeft={true}
+              links={[
+                {
+                  linkIcon: FaGithub,
+                  url: "https://github.com/nmckenryan/CringeTV",
+                },
+              ]}
             />
             <Divider />
             <SummaryBlock
@@ -180,6 +196,12 @@ export default async function Home() {
               endDate={null}
               imageUrl={null}
               isPhotoLeft={true}
+              links={[
+                {
+                  linkIcon: FaGithub,
+                  url: "https://github.com/nmckenryan/PokemonUnboundScraper",
+                },
+              ]}
             />
             <Divider />
 
@@ -192,6 +214,19 @@ export default async function Home() {
               imageUrl={null}
               isPhotoLeft={true}
             />
+
+            <Divider />
+
+            <SummaryBlock
+              title="This Website!"
+              position="Built a Portfolio/CV site"
+              startDate={null}
+              points={thisWebsitePoints}
+              endDate={null}
+              imageUrl={null}
+              isPhotoLeft={true}
+            />
+            <div className="mb-4" />
           </>
         </div>
       </SectionBlock>
